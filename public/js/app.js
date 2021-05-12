@@ -2949,7 +2949,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "config": () => (/* binding */ config)
 /* harmony export */ });
 var config = {
-  VUE_APP_URL: "http://localhost:8000"
+  VUE_APP_URL: "http://cart.ibrahimgad.com"
 };
 
 /***/ }),

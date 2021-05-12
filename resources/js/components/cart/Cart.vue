@@ -21,11 +21,11 @@
                             <span class="m-auto d-flex">|</span>
                             <span class="text-center d-flex m-auto">
                                 <span v-if="inCart(item.product.id)">
-                                    <a href="#" @click="changeCart(item.product.id)"><i class="fa fa-plus"></i></a>
+                                    <a href="javascript:;" @click="changeCart(item.product.id)"><i class="fa fa-plus"></i></a>
                                     <input type="text" disabled readonly :value="amountInCart(item.product.id)" class="count-input">
-                                    <a href="#" @click="changeCart(item.product.id, '-')"><i class="fa fa-minus"></i></a>
+                                    <a href="javascript:;" @click="changeCart(item.product.id, '-')"><i class="fa fa-minus"></i></a>
                                 </span>
-                                <a href="#" @click="changeCart(item.product.id)" v-else><i class="fa fa-shopping-cart"></i></a>
+                                <a href="javascript:;" @click="changeCart(item.product.id)" v-else><i class="fa fa-shopping-cart"></i></a>
                             </span>
                         </h5>
                     </div>
@@ -61,7 +61,7 @@
                 <div class="border text-center p-2" v-if="cart">
                     <p class="text-left border-bottom p-1 border-right" v-for="discount in cart.content.discounts">{{discount.coupon.code}}
                     <span class="float-right">
-                        <a href="#" @click="removeCoupon(discount.id)"><i class="fa fa-times"></i></a>
+                        <a href="javascript:;" @click="removeCoupon(discount.id)"><i class="fa fa-times"></i></a>
                     </span>
                     </p>
                     <input type="text" v-model="coupon" :class="'form-control mb-2 '+(errors.coupon ?  'is-invalid' : '')" placeholder="Coupon here">

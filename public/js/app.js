@@ -1988,6 +1988,7 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (response) {
         vue.$cart = response.data.cart;
       });
+      return false;
     },
     inCart: function inCart(product_id) {
       if (!this.$cart.content.items) return false;
@@ -2949,6 +2950,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "config": () => (/* binding */ config)
 /* harmony export */ });
 var config = {
+  // VUE_APP_URL : "http://localhost/cart",
   VUE_APP_URL: "http://cart.ibrahimgad.com"
 };
 
@@ -39481,7 +39483,7 @@ var render = function() {
                         _c(
                           "a",
                           {
-                            attrs: { href: "#" },
+                            attrs: { href: "javascript:;" },
                             on: {
                               click: function($event) {
                                 return _vm.changeCart(item.id)
@@ -39500,7 +39502,7 @@ var render = function() {
                         _c(
                           "a",
                           {
-                            attrs: { href: "#" },
+                            attrs: { href: "javascript:;" },
                             on: {
                               click: function($event) {
                                 return _vm.changeCart(item.id, "-")
@@ -39513,7 +39515,7 @@ var render = function() {
                     : _c(
                         "a",
                         {
-                          attrs: { href: "#" },
+                          attrs: { href: "javascript:;" },
                           on: {
                             click: function($event) {
                               return _vm.changeCart(item.id)
@@ -39550,7 +39552,10 @@ var render = function() {
                       "a",
                       {
                         staticClass: "page-link",
-                        attrs: { href: "#", "aria-label": "Previous" },
+                        attrs: {
+                          href: "javascript:;",
+                          "aria-label": "Previous"
+                        },
                         on: {
                           click: function($event) {
                             return _vm.paginate(link.url)
@@ -39658,7 +39663,7 @@ var render = function() {
                             _c(
                               "a",
                               {
-                                attrs: { href: "#" },
+                                attrs: { href: "javascript:;" },
                                 on: {
                                   click: function($event) {
                                     return _vm.changeCart(item.product.id)
@@ -39683,7 +39688,7 @@ var render = function() {
                             _c(
                               "a",
                               {
-                                attrs: { href: "#" },
+                                attrs: { href: "javascript:;" },
                                 on: {
                                   click: function($event) {
                                     return _vm.changeCart(item.product.id, "-")
@@ -39696,7 +39701,7 @@ var render = function() {
                         : _c(
                             "a",
                             {
-                              attrs: { href: "#" },
+                              attrs: { href: "javascript:;" },
                               on: {
                                 click: function($event) {
                                   return _vm.changeCart(item.product.id)
@@ -39781,7 +39786,7 @@ var render = function() {
                         _c(
                           "a",
                           {
-                            attrs: { href: "#" },
+                            attrs: { href: "javascript:;" },
                             on: {
                               click: function($event) {
                                 return _vm.removeCoupon(discount.id)
@@ -40408,7 +40413,10 @@ var render = function() {
                           "a",
                           {
                             staticClass: "page-link",
-                            attrs: { href: "#", "aria-label": "Previous" },
+                            attrs: {
+                              href: "javascript:;",
+                              "aria-label": "Previous"
+                            },
                             on: {
                               click: function($event) {
                                 return _vm.paginate(link.url)
@@ -41047,7 +41055,10 @@ var render = function() {
                           "a",
                           {
                             staticClass: "page-link",
-                            attrs: { href: "#", "aria-label": "Previous" },
+                            attrs: {
+                              href: "javascript:;",
+                              "aria-label": "Previous"
+                            },
                             on: {
                               click: function($event) {
                                 return _vm.paginate(link.url)

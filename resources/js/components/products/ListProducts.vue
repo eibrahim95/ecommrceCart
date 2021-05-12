@@ -39,7 +39,7 @@
                     <nav aria-label="Page navigation" v-if="products && products.last_page !== 1">
                         <ul class="pagination justify-content-center">
                             <li :class="'page-item '+(link.url ? ' ' : 'disabled ')+(link.active ? 'active' : '')" v-for="link in products.links">
-                                <a class="page-link" href="#" aria-label="Previous" @click="paginate(link.url)">
+                                <a class="page-link" href="javascript:;" aria-label="Previous" @click="paginate(link.url)">
                                     <span aria-hidden="true" v-html="link.label"></span>
                                 </a>
                             </li>

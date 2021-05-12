@@ -12,11 +12,11 @@
                     <span class="m-auto d-flex">|</span>
                     <span class="text-center d-flex m-auto">
                         <span v-if="inCart(item.id)">
-                            <a href="#" @click="changeCart(item.id)"><i class="fa fa-plus"></i></a>
+                            <a href="javascript:;" @click="changeCart(item.id)"><i class="fa fa-plus"></i></a>
                             <input type="text" disabled readonly :value="amountInCart(item.id)" class="count-input">
-                            <a href="#" @click="changeCart(item.id, '-')"><i class="fa fa-minus"></i></a>
+                            <a href="javascript:;" @click="changeCart(item.id, '-')"><i class="fa fa-minus"></i></a>
                         </span>
-                        <a href="#" @click="changeCart(item.id)" v-else><i class="fa fa-shopping-cart"></i></a>
+                        <a href="javascript:;" @click="changeCart(item.id)" v-else><i class="fa fa-shopping-cart"></i></a>
                     </span>
                 </h5>
             </div>
@@ -25,7 +25,7 @@
             <nav aria-label="Page navigation" v-if="products && products.last_page !== 1">
                 <ul class="pagination justify-content-center">
                     <li :class="'page-item '+(link.url ? ' ' : 'disabled ')+(link.active ? 'active' : '')" v-for="link in products.links">
-                        <a class="page-link" href="#" aria-label="Previous" @click="paginate(link.url)">
+                        <a class="page-link" href="javascript:;" aria-label="Previous" @click="paginate(link.url)">
                             <span aria-hidden="true" v-html="link.label"></span>
                         </a>
                     </li>
@@ -62,6 +62,7 @@ export default {
                 .then(response => {
                     vue.$cart = response.data.cart;
                 });
+            return false;
         },
         inCart(product_id){
             if (!this.$cart.content.items) return false;

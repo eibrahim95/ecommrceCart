@@ -35,7 +35,6 @@ class ProductsController extends Controller
             'price' => $request->input('price'),
         ]);
         $product->save();
-        $product->refresh();
         return ['status'=>1, 'product'=>$product];
     }
 
@@ -65,7 +64,6 @@ class ProductsController extends Controller
             'image' => $request->input('image'),
             'price' => $request->input('price'),
         ]);
-        $product->refresh();
         return ['status'=>1, 'product'=>$product];
     }
 

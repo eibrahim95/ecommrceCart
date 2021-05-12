@@ -60,3 +60,5 @@ so there has to a place where these products will be added to the cart , then we
 - Copy `.env.testing.example` to `.env.testing`
 - Edit database details in `.env.testing` 
 - Simply : `php artisan test`
+## API Documentations
+Auto generated phpdoc documentations can be found at [docs](docs/api/index.html)  

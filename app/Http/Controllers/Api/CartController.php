@@ -22,14 +22,14 @@ class CartController extends Controller
      */
     public function __construct(Request $request){
         if(!App::runningInConsole()) {
-            $this->updateCart($request);
+            $this->update_cart($request);
         }
     }
 
     /**
      * @param Request $request
      */
-    public function updateCart(Request $request): void{
+    public function update_cart(Request $request): void{
         $this->cart = Cart::with(['items', 'discounts'])->where(['session_id'=>$request->input('session_id')])->firstOrCreate(['session_id'=>$request->input('session_id')]);
         $this->count = $this->cart ? $this->cart->items()->count() : 0;
     }
@@ -37,7 +37,7 @@ class CartController extends Controller
     /**
      * @return array
      */
-    public function getCart(): array
+    public function get_cart(): array
     {
         return ['count'=>$this->count, 'content'=>$this->cart];
     }
@@ -47,7 +47,7 @@ class CartController extends Controller
      */
     public function cart(Request $request): array
     {
-        return ['status'=>1,'cart'=>$this->getCart()];
+        return ['status'=>1,'cart'=>$this->get_cart()];
     }
 
     /**
@@ -80,8 +80,8 @@ class CartController extends Controller
         else {
             $item->delete();
         }
-        $this->updateCart($request);
-        return ['status'=>1,'cart'=>$this->getCart()];
+        $this->update_cart($request);
+        return ['status'=>1,'cart'=>$this->get_cart()];
     }
 
     /**
@@ -100,8 +100,8 @@ class CartController extends Controller
             $discount->delete();
             return ['status'=>0, 'errors'=>['coupon'=>["The discount the coupon provides exceeds the order total"]]];
         }
-        $this->updateCart($request);
-        return ['status'=>1, 'cart'=>$this->getCart()];
+        $this->update_cart($request);
+        return ['status'=>1, 'cart'=>$this->get_cart()];
     }
 
     /**
@@ -114,7 +114,7 @@ class CartController extends Controller
         if ($this->cart && $cart_coupon->cart && $this->cart->id == $cart_coupon->cart->id){
             $cart_coupon->delete();
         }
-        $this->updateCart($request);
-        return ['status'=>1, 'cart'=>$this->getCart()];
+        $this->update_cart($request);
+        return ['status'=>1, 'cart'=>$this->get_cart()];
     }
 }

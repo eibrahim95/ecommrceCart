@@ -22,6 +22,7 @@ a Shopping cart built with PHP's Laravel & Vuejs
 - Run `composer install` in the root of the project.
 - Edit database details in `.env` file.
 - Run `php artisan migrate:fresh --seed`
+- Copy `resources/js/config.js.example` to `resources/js/config.js`
 - Run `npm install` in the root of the project
 - Run `npm run dev`
 - Run `php artisan serve`

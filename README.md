@@ -64,3 +64,12 @@ so there has to a place where these products will be added to the cart , then we
 - Simply : `php artisan test`
 ## API Documentations
 Auto generated phpdoc documentations can be found at [docs](docs/api/index.html)  
+[Docs on the demo](http://cart.ibrahimgad.com/docs/api/)
+
+## To Do (left outs)
+### Important
+- Add unit tests (the current are only feature tests).
+- Add tests for the frontend.
+### Other
+- Add `DockerFile`/`docker-compose.yaml` for docker deployment.
+- Add a `procfile` for heroku deployment.
